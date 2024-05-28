@@ -15,24 +15,28 @@ const Main = () => {
  
   const perfumes = [
     {
+      id: '1011',
       image: 'https://www.sephora.com/productimages/product/p470257-av-15-zoom.jpg?imwidth=270',
       name: 'Mini Black Opium & Libre Eau de Parfum Set',
       description: 'Yves Saint Laurent',
       price: '$250',
     },
     {
+      id: '1021',
       image: 'https://www.sephora.com/productimages/product/p474316-av-21-zoom.jpg?imwidth=270',
       name: 'Miss Dior Eau de Parfum',
       description: 'Dior',
       price: '$200',
     },
     {
+      id: '1031',
       image: 'https://www.sephora.com/productimages/product/p258612-av-1-zoom.jpg?imwidth=270',
       name: 'CHANEL CHANCE EAU TENDRE Eau de Toilette',
       description: 'CHANEL',
       price: '$145',
     },
     {
+      id: '1041',
       image: 'https://www.sephora.com/productimages/product/p508460-av-1-zoom.jpg?imwidth=270',
       name: 'Dolce&Gabbana Q Eau de Parfum',
       description: 'Dolce&Gabbana.',
@@ -123,6 +127,7 @@ const Main = () => {
           <Slider {...settings}>
             {perfumes.map((perfume, index) => (
               <PerfumeCard
+                productId={perfume.id}
                 key={index}
                 image={perfume.image}
                 name={perfume.name}
@@ -140,6 +145,7 @@ const Main = () => {
              We offer exclusive in-store experiences that elevate your visit to Aisu perfume. Join us for fragrance workshops, where you can learn about the art of perfumery and even create your own bespoke scent. Our events are designed to immerse you in the world of fragrance, offering a sensory escape and a deeper appreciation for the craft.
              A beautiful fragrance makes for an unforgettable gift. Whether for a loved one or a special occasion, our elegant gift-wrapping service adds a touch of luxury to your purchase. Not sure which scent to choose? Our gift cards allow the recipient to enjoy the pleasure of selecting their own perfect fragrance.
               </p>
+              
           </section>
           <br/>
           <section> 
@@ -148,8 +154,7 @@ const Main = () => {
           <img className='history-img2' src={foto2}  alt="perfume" />
           </section>
 
-         
-        </div>
+          </div>
         <br /><br />
     </div>
   )

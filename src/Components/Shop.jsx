@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PerfumeCard from './PerfumeCard';
+import Basket from './Basket';
+import { CartProvider } from 'react-use-cart';
 import './Style.css';
 
 const Shop = () => {
@@ -36,29 +38,33 @@ const Shop = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearch} className="search_form">
-        <input 
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="    Search for perfumes"
-          className="search_input"
-        />
-        <button type="submit" className="search_button">Search</button>
-      </form>
-      <div className="perfume_cards">
-        {products.map((product, index) => (
-          <PerfumeCard
-            key={index}
-            image={product.heroImage}
-            name={product.displayName}
-            description={product.brandName}
-            price={product.currentSku.listPrice}
+    <CartProvider>
+      <div>
+        <form onSubmit={handleSearch} className="search_form">
+          <input 
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search for perfumes"
+            className="search_input"
           />
-        ))}
+          <button type="submit" className="search_button">Search</button>
+        </form>
+        <div className="perfume_cards">
+          {products.map((product) => (
+            <PerfumeCard
+              key={product.productId}
+              productId={product.productId}
+              image={product.heroImage}
+              name={product.displayName}
+              description={product.brandName}
+              price={product.currentSku.listPrice}
+            />
+          ))}
+        </div>
+        {/* <Basket /> */}
       </div>
-    </div>
+    </CartProvider>
   );
 };
 

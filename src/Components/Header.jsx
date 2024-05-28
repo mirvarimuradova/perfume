@@ -11,12 +11,13 @@ const Header = () => {
             <div className='header'>
         <nav class="navButtons"> 
         <p  class="navButton"> <Link to="/" >Home </Link> </p>
-        <p class="navButton"> <Link to="/contacts">Contacts</Link></p> 
+        <p class="navButton"> <Link to="/contacts">Contacts</Link></p>  
         <p class="navButton"> <Link to="/shop">Shop</Link></p>
-        <p class="navButton"> <Link to="/cart"> <FaShoppingCart /></Link></p>
+        <p class="navButton"> <Link to="/basket"> <FaShoppingCart /></Link></p>
         {/* <p class="navButton"> <Link to="/contacts">Contact us</Link></p> */}
         
         </nav>
+
         
               </div>
          

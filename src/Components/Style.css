@@ -240,7 +240,27 @@ h2{
   .history-img1{
     margin: 10px 30px -80px -90px;
   }
-.history-img2{
+ .history-img2{
     z-index: 1;
     margin: -115px -30px 0px 30px;
 }
+.basket {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.basket ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.basket li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.basket button {
+  margin: 0 5px;
+}
+

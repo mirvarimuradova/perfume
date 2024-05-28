@@ -1,35 +1,18 @@
 import React from 'react';
-import './Style.css';
-import {CartProvider, useCart } from 'react-use-cart';
+import { useCart } from 'react-use-cart';
 
-const PerfumeCard = ({ image, name, description, price }) => {
+const PerfumeCard = ({ productId, name, price, image, description }) => {
   const { addItem } = useCart();
 
-  
-  const priceNumber = parseFloat(price);
-
-  const handleAddToCart = () => {
-    addItem({
-      id: name,
-      price: priceNumber,
-      image,
-      name,
-      description
-    });
-  };
+  const item = { id: productId, name, price, image, description };
 
   return (
     <div className="perfume-card">
-      <img src={image} alt={name} className="perfume-image" />
-      <h3 className="perfume-name">{name}</h3>
-      <p className="perfume-description">{description}</p>
-      <div className="pricing">
-        <span className="perfume-price original-price">{priceNumber.toFixed(2)} USD</span>
-        {!isNaN(priceNumber) && (
-          <span className="perfume-price sale-price">{(priceNumber / 2).toFixed(2)} USD</span>
-        )}
-      </div>
-      <button className='add' onClick={handleAddToCart}>Add to basket</button>
+      <img className='perfume-image' src={image} alt={name} />
+      <h3 className='perfume-name'>{name}</h3>
+      <p className='perfume-description'>{description}</p>
+      <p className='perfume-price'>Price: {price} USD</p>
+      <button className='add' onClick={() => addItem(item)}>Add to Cart</button>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const Contacts = () => {
         <li><input placeholder='Message' className=' topic' type='text'required/></li> 
        
        
-       <li><input type="submit" value="Send Request" className='submit' /></li>
+       <li><input  type="submit" value="Send Request" className='submit' /></li>
           </ul>
           </form>
           <div>
